@@ -28,7 +28,7 @@ jobs:
           mkdir -p site/__/auth site/__/firebase
           for f in handler iframe links; do curl -fsSL "$B/__/auth/$f" -o "site/__/auth/$f.html"; done
           for f in handler.js experiments.js iframe.js links.js; do curl -fsSL "$B/__/auth/$f" -o "site/__/auth/$f"; done
-          curl -fsSL "$B/__/firebase/init.json" -o site/__/firebase/init.json
+          echo '{"apiKey":"AIzaSyAOSxEmIPnBoYlDnpAMPrS93VENRUwVlGs","appId":"1:188541739876:web:175d31275d27b45cacd071","authDomain":"jingying-fafa2.firebaseapp.com","messagingSenderId":"188541739876","projectId":"jingying-fafa2","storageBucket":"jingying-fafa2.firebasestorage.app"}' > site/__/firebase/init.json
           printf '<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=/jingying/"><a href="/jingying/">菁鷹直排輪</a>' > site/index.html
           touch site/.nojekyll
           ls -la site/__/auth site/__/firebase
